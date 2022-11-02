@@ -1,9 +1,23 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/fetcher');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 3000;
 
-let someSchema = mongoose.Schema({
-  // TODO: your schema here!
+const db = require('./queries');
+
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+
+app.get('/', (request, response) => {
+  response.json({ info: 'Node.js, Express, and Postgres API' });
 });
 
-let Repo = mongoose.model('Repo', someSchema);
-  //creates a model based of the schema provided
+//routes
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}.`);
+});
