@@ -53,6 +53,8 @@ CREATE TABLE Answers (
   PRIMARY KEY (answer_id)
 );
 
+
+
 -- ---
 -- Table 'Photos'
 --
