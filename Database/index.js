@@ -28,5 +28,5 @@ app.get('/', (request, response) => {
 //routes
 
 app.listen(port, () => {
-  console.log(`App running on port ${port}.`);
+  console.log(`App listening on port ${port}.`);
 });
