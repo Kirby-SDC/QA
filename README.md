@@ -3,7 +3,7 @@
 
 This is my repo for booting a server that can accept requests from a client. It also allows you to create your tables and import the tables with data from a csv file/s using .sql file to query your database. The intent here is to make it easier, hopefully, to deploy to AWS, with or without Docker.
 
-Out of the box it is setup to directly import my personal .csv files from a directory into my database defined by the .sql file.  If you want to change this you need to add your own .sql with import queries pointing to where your .csv files are.
+Out of the box it is setup to directly import my personal .csv files from a directory into my database defined by the .sql file.  If you want to change this you need to add your own .sql file with import statements pointing to where your .csv files are.
 
 If you simply want to test this you can just change the path the import statement is pointing to, below is an example.
 
