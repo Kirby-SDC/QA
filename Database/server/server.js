@@ -16,7 +16,7 @@ connectionClient.connect((err, client, release) => {
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
-app.use('/', routes) //before any request you routes
+app.use('/', routes) //before any request you route
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}.`);
