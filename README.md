@@ -53,11 +53,15 @@ npm install
 
 ## Run the server and connect to database
 
+*Running the server connects you to the database and allows you to listen to api calls.*
+
 ```
 npm start
 ```
 
-## To seed the database
+## Seeding the database
+
+*Seeding the database will drop all tables if they exists and make them again.  It then imports the new tables with the data provided. To seed the database after connecting via the server just run the npm command below.*
 
 ```
 npm seed
