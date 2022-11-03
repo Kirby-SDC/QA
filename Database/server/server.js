@@ -1,7 +1,7 @@
 
 const express = require('express');
-const routes = require('./Routes/questions.js')
-const connectionClient = require('./connect.js')
+const routes = require('../routes/questions.js')
+const connectionClient = require('../utils/connect.js')
 const app = express();
 const port = 3000;
 
@@ -16,7 +16,6 @@ connectionClient.connect((err, client, release) => {
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
-
 app.use('/', routes) //before any request you routes
 
 app.listen(port, () => {
