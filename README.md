@@ -19,7 +19,7 @@ Fair warning if you start moving these files around in other directories, or hav
 
 I believe that's about it, otherwise follow the steps below and you should be good to go.  I will work on refactoring this to include the client files as well, but it really isn't necessary as you can run them both seperately anyhow.
 
-If you have any questions or need help reach out to me on Slack - Andrew Arsenault.
+If you have any questions, advice, help setting up or find bugs please reach out to me on Slack - Andrew Arsenault.
 
 Thanks, good luck!
 
