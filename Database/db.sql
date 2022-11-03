@@ -7,18 +7,6 @@
 -- SET FOREIGN_KEY_CHECKS=0;
 
 -- ---
--- Table 'Products'
---
--- ---
-
-DROP TABLE IF EXISTS Products cascade;
-
-CREATE TABLE Products (
-  id SERIAL,
-  PRIMARY KEY (id)
-);
-
--- ---
 -- Table 'Question'
 --
 -- ---
@@ -26,15 +14,22 @@ CREATE TABLE Products (
 DROP TABLE IF EXISTS Question cascade;
 
 CREATE TABLE Question (
-  question_id SERIAL,
+  id SERIAL,
+  product_id INTEGER NULL DEFAULT NULL,
   question_body VARCHAR NULL DEFAULT NULL,
-  question_date DATE NULL DEFAULT NULL,
-  user_id VARCHAR NULL DEFAULT NULL,
-  question_helpfulness INTEGER NULL DEFAULT NULL,
+  question_date BIGINT NULL DEFAULT NULL,
+  asker_name VARCHAR NULL DEFAULT NULL,
+  asker_email VARCHAR NULL DEFAULT NULL,
   reported BOOLEAN NULL DEFAULT NULL,
-  product_id_Products INTEGER NULL DEFAULT NULL,
-  PRIMARY KEY (question_id)
+  question_helpfulness INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (id)
 );
+
+COPY Question (id, product_id, question_body, question_date, asker_name, asker_email, reported, question_helpfulness)
+
+FROM '/Users/andrewarsenault/Desktop/sdcdata/questions.csv'
+
+DELIMITER ',' CSV HEADER;
 
 -- ---
 -- Table 'Answers'
@@ -45,36 +40,49 @@ DROP TABLE IF EXISTS Answers cascade;
 
 CREATE TABLE Answers (
   answer_id SERIAL,
-  body VARCHAR NULL DEFAULT NULL,
-  date DATE NULL DEFAULT NULL,
-  answerer_name VARCHAR NULL DEFAULT NULL,
-  helpfulness INTEGER NULL DEFAULT NULL,
   question_id_Questions INTEGER NULL DEFAULT NULL,
+  body VARCHAR NULL DEFAULT NULL,
+  date_written BIGINT NULL DEFAULT NULL,
+  answerer_name VARCHAR NULL DEFAULT NULL,
+  answerer_email VARCHAR NULL DEFAULT NULL,
+  reported BOOLEAN NULL DEFAULT NULL,
+  helpful INTEGER NULL DEFAULT NULL,
   PRIMARY KEY (answer_id)
 );
 
+COPY Answers (answer_id, question_id_Questions, body,date_written, answerer_name, answerer_email, reported, helpful)
 
+FROM '/Users/andrewarsenault/Desktop/sdcdata/answers.csv'
 
--- ---
--- Table 'Photos'
---
--- ---
+DELIMITER ',' CSV HEADER;
+
+-- -- ---
+-- -- Table 'Photos'
+-- --
+-- -- ---
 
 DROP TABLE IF EXISTS Photos cascade;
 
 CREATE TABLE Photos (
   id SERIAL,
-  url VARCHAR NULL DEFAULT NULL,
   answer_id INTEGER NULL DEFAULT NULL,
+  url VARCHAR NULL DEFAULT NULL,
   PRIMARY KEY (id)
 );
 
--- ---
--- Foreign Keys
--- ---
 
-ALTER TABLE Question ADD FOREIGN KEY (product_id_Products) REFERENCES Products (id);
-ALTER TABLE Answers ADD FOREIGN KEY (question_id_Questions) REFERENCES Question (question_id);
+COPY Photos (id, answer_id, url)
+
+FROM '/Users/andrewarsenault/Desktop/sdcdata/answers_photos.csv'
+
+DELIMITER ',' CSV HEADER;
+
+
+-- -- ---
+-- -- Foreign Keys
+-- -- ---
+
+ALTER TABLE Answers ADD FOREIGN KEY (question_id_Questions) REFERENCES Question (id);
 ALTER TABLE Photos ADD FOREIGN KEY (answer_id) REFERENCES Answers (answer_id);
 
 -- ---
