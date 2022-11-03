@@ -17,7 +17,7 @@ DELIMITER ',' CSV HEADER;
 
 Fair warning if you start moving these files around in other directories, or have your package.json in a directory higher than you see in this repo, it may cause side effects.  I'm sure it can be refactored, but it will just be a bit more work than I'm going to explain in depth here.
 
-I believe that's about it, otherwise follow the steps below and you should be good to go.  I will work on refactoring this to include the client files as well, but it really isn't necessary as you can run them both seperately anyhow.
+I believe that's about it, otherwise follow the steps below and you should be good to go.  I will work on refactoring this to include the client files, and potentially allow you to create a new database on start. You should be able to run the client separately from the express server in this repo just make sure the ports don't conflict.  
 
 If you have any questions, advice, help setting up or find bugs please reach out to me on Slack - Andrew Arsenault.
 
@@ -31,7 +31,9 @@ If you have any trouble you can feel free to contact me.
 
 ## Configure your connection
 
-In the connect.js file change the config to your database information
+In the connect.js file change the config to represent your currently created database.
+
+*Side note: As far as I know there is no way to create a database without at least logging into the template database that postgres makes for you.*
 
 ```
 let config = {
