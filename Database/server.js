@@ -1,5 +1,6 @@
 
 const express = require('express');
+const routes = require('./Routes/questions.js')
 const connectionClient = require('./connect.js')
 const bodyParser = require('body-parser');
 const app = express();
@@ -20,12 +21,7 @@ app.use(
     extended: true,
   })
 );
-
-app.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' });
-});
-
-//routes
+app.use('/', routes) //before any request you routes
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}.`);
