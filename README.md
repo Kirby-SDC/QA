@@ -7,6 +7,7 @@ Out of the box it is setup to directly import my personal .csv files from a dire
 
 If you simply want to test this you can just change the path the import statement is pointing to, below is an example.
 
+
 ```
 COPY Question (id, product_id, question_body, question_date, asker_name, asker_email, reported, question_helpfulness)
 
@@ -14,6 +15,7 @@ FROM '/Users/andrewarsenault/Desktop/sdcdata/questions.csv' //this is the path y
 
 DELIMITER ',' CSV HEADER;
 ```
+
 
 Fair warning if you start moving these files around in other directories, or have your package.json in a directory higher than you see in this repo, it may cause side effects.  I'm sure it can be refactored, but it will just be a bit more work than I'm going to explain in depth here.
 
