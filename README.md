@@ -1,5 +1,5 @@
 # QA
-## Overview
+## Overview - No ORM, No pgAdmin just keys.
 
 This is my repo for booting a server that can accept requests from a client. It also allows you to create your tables and import the tables with data from a csv file/s using .sql file to query your database. The intent here is to make it easier, hopefully, to deploy to AWS, with or without Docker.
 
@@ -62,3 +62,9 @@ npm start
 ```
 npm seed
 ```
+
+## Future goals
+
+- Do this using async/awake/promises
+- Use pools instead of clients
+- Refactor to allow for the implementation of a new database
