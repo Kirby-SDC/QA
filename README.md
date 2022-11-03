@@ -33,17 +33,17 @@ If you have any trouble you can feel free to contact me.
 
 ## Configure your connection
 
-In the connect.js file change the config to represent your currently created database.
+In the .env file change the config to represent your currently created database.
 
-*Side note: As far as I know there is no way to create a database without at least logging into the template database that postgres makes for you.*
+*Side note: As far as I know there is no way to create a database without at least logging into the template database that postgres makes for you. Also you could add your server port to this .env if you want*
 
 ```
-let config = {
-  user:'yourdatabaseusername',
-  host:'localhost',
-  database: 'databasename',
-  password: 'yourpassword',
-  port: 5432
+{
+  USERID = 'yourdatabaseusername',
+  HOST = 'localhost',
+  DATABASE = 'databasename',
+  PASSWORD = 'yourpassword',
+  PORT = 5432
 }
 ```
 
