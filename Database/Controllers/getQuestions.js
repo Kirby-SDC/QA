@@ -1,6 +1,6 @@
 
 const connectionClient = require('../utils/connect.js')
-const allQ = (req, res, next) => {
+const getQuestions = (req, res, next) => {
 
   let product_id = req.query.product_id
   let count = req.query.count || 5
@@ -25,4 +25,4 @@ const allQ = (req, res, next) => {
 
 }
 
-module.exports = {allQ}
+module.exports = {getQuestions}

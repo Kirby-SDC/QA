@@ -95,6 +95,14 @@ ALTER TABLE Photos ADD FOREIGN KEY (answer_id) REFERENCES Answers (answer_id);
 -- ALTER TABLE Photos ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ---
+-- Indexing
+-- ---
+
+CREATE INDEX question_product_id ON Question (product_id);
+CREATE INDEX answers_question_id ON Answers (question_id_Questions);
+
+
+-- ---
 -- Test Data
 -- ---
 
