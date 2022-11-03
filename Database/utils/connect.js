@@ -1,6 +1,6 @@
 // const path = path.resolve(__dirname, './.env') <--
 require('dotenv').config()
-const Client = require('pg').Client
+const Pool = require('pg').Pool
 
 
 let config = {
@@ -12,6 +12,6 @@ let config = {
   idle_session_timeout: process.env.IDLE_SESSION_TIMEOUT
 }
 
-let connectionClient = new Client(config);
+let connectionClient = new Pool(config);
 
 module.exports = connectionClient;
