@@ -107,6 +107,8 @@ SELECT setval('photos_id_seq', COALESCE((SELECT MAX(id)+1 FROM Photos), 1), fals
 -- ---
 
 CREATE INDEX question_product_id ON Question (product_id);
+CREATE INDEX question_reported ON Question (reported);
+CREATE INDEX photos_answer_id ON Photos (answer_id);
 CREATE INDEX answers_question_id ON Answers (question_id_Questions);
 
 
