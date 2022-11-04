@@ -85,6 +85,14 @@ DELIMITER ',' CSV HEADER;
 ALTER TABLE Answers ADD FOREIGN KEY (question_id_Questions) REFERENCES Question (id);
 ALTER TABLE Photos ADD FOREIGN KEY (answer_id) REFERENCES Answers (answer_id);
 
+-- -- ---
+-- -- Select Max Pkey
+-- -- ---
+
+SELECT setval('question_id_seq', COALESCE((SELECT MAX(id)+1 FROM Question), 1), false);
+SELECT setval('answers_answer_id_seq', COALESCE((SELECT MAX(answer_id)+1 FROM Answers), 1), false);
+SELECT setval('photos_id_seq', COALESCE((SELECT MAX(id)+1 FROM Photos), 1), false);
+
 -- ---
 -- Table Properties
 -- ---

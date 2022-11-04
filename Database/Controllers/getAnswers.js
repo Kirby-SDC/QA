@@ -21,7 +21,6 @@ const getAnswers = (req, res, next) => {
     res.status(500).end()
   })
 
-
 }
 
 module.exports = {getAnswers}

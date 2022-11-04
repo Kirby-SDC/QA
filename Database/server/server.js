@@ -5,8 +5,6 @@ const connectionClient = require('../utils/connect.js')
 const app = express();
 const port = 3000;
 
-// const db = require('./queries')
-
 connectionClient.connect((err, client, release) => {
   if (err) {
     return console.error('Error acquiring client', err.stack)
