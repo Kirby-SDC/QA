@@ -101,3 +101,137 @@ SELECT json_build_object
 
 
 // )
+
+{
+  "question": 5,
+  "page": 1,
+  "count": 5,
+  "results": [
+    {
+      "answer_id": 46,
+      "body": "I've thrown it in the wash and it seems fine",
+      "date": 1606022843272,
+      "answerer_name": "marcanthony",
+      "helpfulness": 8,
+      "photos": [
+        {
+          "id": 1,
+          "url": "https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
+        },
+        {
+          "id": 2,
+          "url": "https://images.unsplash.com/photo-1511127088257-53ccfcc769fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        },
+        {
+          "id": 3,
+          "url": "https://images.unsplash.com/photo-1500603720222-eb7a1f997356?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80"
+        }
+      ]
+    },
+    {
+      "answer_id": 64,
+      "body": "It says not to",
+      "date": 1588644950162,
+      "answerer_name": "ceasar",
+      "helpfulness": 0,
+      "photos": [
+        {
+          "id": 1,
+          "url": "https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
+        },
+        {
+          "id": 2,
+          "url": "https://images.unsplash.com/photo-1511127088257-53ccfcc769fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        },
+        {
+          "id": 3,
+          "url": "https://images.unsplash.com/photo-1500603720222-eb7a1f997356?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80"
+        }
+      ]
+    },
+    {
+      "answer_id": 92,
+      "body": "Haha, are you serious?",
+      "date": 1600330331162,
+      "answerer_name": "ceasar",
+      "helpfulness": 0,
+      "photos": [
+        {
+          "id": 1,
+          "url": "https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
+        },
+        {
+          "id": 2,
+          "url": "https://images.unsplash.com/photo-1511127088257-53ccfcc769fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        },
+        {
+          "id": 3,
+          "url": "https://images.unsplash.com/photo-1500603720222-eb7a1f997356?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80"
+        }
+      ]
+    },
+    {
+      "answer_id": 96,
+      "body": "I wouldn't machine wash it",
+      "date": 1590584621205,
+      "answerer_name": "ceasar",
+      "helpfulness": 0,
+      "photos": [
+        {
+          "id": 1,
+          "url": "https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
+        },
+        {
+          "id": 2,
+          "url": "https://images.unsplash.com/photo-1511127088257-53ccfcc769fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        },
+        {
+          "id": 3,
+          "url": "https://images.unsplash.com/photo-1500603720222-eb7a1f997356?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80"
+        }
+      ]
+    },
+    {
+      "answer_id": 101,
+      "body": "Only if you want to ruin it!",
+      "date": 1590584621205,
+      "answerer_name": "ceasar",
+      "helpfulness": 5,
+      "photos": [
+        {
+          "id": 1,
+          "url": "https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
+        },
+        {
+          "id": 2,
+          "url": "https://images.unsplash.com/photo-1511127088257-53ccfcc769fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        },
+        {
+          "id": 3,
+          "url": "https://images.unsplash.com/photo-1500603720222-eb7a1f997356?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80"
+        }
+      ]
+    },
+    {
+      "answer_id": 107,
+      "body": "Yes",
+      "date": 1610527646863,
+      "answerer_name": "Seller",
+      "helpfulness": 4,
+      "photos": [
+        {
+          "id": 1,
+          "url": "https://images.unsplash.com/photo-1530519729491-aea5b51d1ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80"
+        },
+        {
+          "id": 2,
+          "url": "https://images.unsplash.com/photo-1511127088257-53ccfcc769fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        },
+        {
+          "id": 3,
+          "url": "https://images.unsplash.com/photo-1500603720222-eb7a1f997356?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80"
+        }
+      ]
+    }
+  ]
+}
