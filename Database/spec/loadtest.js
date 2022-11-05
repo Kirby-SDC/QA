@@ -1,36 +1,10 @@
 import http from 'k6/http';
 import { sleep, check, group } from 'k6';
-
+import {allQuestions, getAnswers, addQuestion, addAnswer, helpfulQuestion, reportQuestion, helpfulAnswer, reportAnswer, postQdata, postAdata} from './dependencies.js'
 export const options = {
   vus: 5, // Virtual Users
-  duration: '100s'
+  duration: '10s'
 };
-
-const postQdata =
-  {
-    body: 'k6test',
-    name: 'k6test',
-    email: 'k6test@gmail.com',
-    product_id: Math.floor(Math.random() * 1000000) + 1
-  }
-
-const postAdata = {
-  body: 'k6test',
-  name: 'k6test',
-  email: 'k6test@gmail.com',
-  photos: ['k6test', 'k6test', 'k6test']
-}
-
-const allQuestions = `http://localhost:3000/qa/questions?product_id=${Math.floor(Math.random() * 100)}&page=${Math.floor(Math.random() * 200)}&count=${Math.floor(Math.random() * 100)}`;
-const getAnswers = `http://localhost:3000/qa/questions/${Math.floor(Math.random() * 1000000) + 1}/answers`;
-const addQuestion = 'http://localhost:3000/qa/questions'
-const addAnswer = `http://localhost:3000/qa/questions/${Math.floor(Math.random() * 1000000) + 1}/answers`
-const helpfulQuestion = `http://localhost:3000/qa/questions/${Math.floor(Math.random() * 1000000) + 1}/helpful`
-const reportQuestion = `http://localhost:3000/qa/questions/${Math.floor(Math.random() * 1000000) + 1}/helpful`
-const helpfulAnswer=`http://localhost:3000/qa/answers/${Math.floor(Math.random() * 1000000) + 1}/helpful`
-const reportAnswer=`http://localhost:3000/qa/answers/${Math.floor(Math.random() * 1000000) + 1}/helpful`
-
-
 
 export default function test() {
   group('getQuestions', () => {
