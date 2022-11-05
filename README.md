@@ -33,7 +33,7 @@ If you have any trouble you can feel free to contact me.
 
 ## Configure your connection
 
-In the .env file change the config to represent your currently created database.
+In the .env file change the config to represent your currently created database.  I am currently using the provided postgress default connection.
 
 *Side note: As far as I know there is no way to create a database without at least logging into the template database that postgres makes for you. Also you could add your server port to this .env if you want*
 
