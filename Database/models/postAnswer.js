@@ -1,7 +1,7 @@
 const connectionClient = require('../utils/connect.js')
 
 const postAnswer = (req, res, next) => {
-  console.log(req.body.body)
+
   let question_id_Questions = req.params.question_id;
   let body = req.body.body;
   let date = new Date().getTime()
@@ -27,8 +27,9 @@ const postAnswer = (req, res, next) => {
   connectionClient
   .query(statement)
   .then((data) => {
-    console.log(data.rows[0].answer_id)
+
     let answerId = data.rows[0].answer_id
+
     req.body.photos.forEach((url) => {
       connectionClient
       .query(`INSERT INTO Photos

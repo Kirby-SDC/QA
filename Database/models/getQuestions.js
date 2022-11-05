@@ -7,8 +7,6 @@ const getQuestions = (req, res, next) => {
   let count = req.query.count || 5
   let page = req.query.page || 1
 
-  console.log(product_id, count, page)
-
   const statement = {
     text: `SELECT json_build_object
     (
@@ -49,7 +47,6 @@ const getQuestions = (req, res, next) => {
   connectionClient
   .query(statement)
   .then((data) => {
-    console.log(data.rows)
     res.send(data.rows[0].json_build_object)
   })
   .catch((err)=>{
