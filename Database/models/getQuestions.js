@@ -47,6 +47,7 @@ const getQuestions = (req, res, next) => {
   connectionClient
   .query(statement)
   .then((data) => {
+    // console.log(data.rows[0].json_build_object)
     res.send(data.rows[0].json_build_object)
   })
   .catch((err)=>{

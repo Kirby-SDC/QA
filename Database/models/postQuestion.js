@@ -27,7 +27,6 @@ const postQuestion = (req, res, next) => {
   connectionClient
   .query(statement)
   .then((data) => {
-
     res.status(201).end()
   })
   .catch((err)=>{

@@ -2,8 +2,9 @@ import http from 'k6/http';
 import { sleep, check, group } from 'k6';
 import {allQuestions, getAnswers, addQuestion, addAnswer, helpfulQuestion, reportQuestion, helpfulAnswer, reportAnswer, postQdata, postAdata} from './dependencies.js'
 export const options = {
-  vus: 5, // Virtual Users
-  duration: '10s'
+  vus: 25, // Virtual Users
+  duration: '100s',
+  rps: 10000
 };
 
 export default function test() {
