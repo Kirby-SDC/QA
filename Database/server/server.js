@@ -1,6 +1,6 @@
 
 const express = require('express');
-const routes = require('../routes/questions.js')
+const routes = require('../routes/routes.js')
 const connectionClient = require('../utils/connect.js')
 const app = express();
 const port = 3000;
