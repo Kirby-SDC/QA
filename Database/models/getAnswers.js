@@ -17,26 +17,24 @@ const getAnswers = (req, res, next) => {
           'page',  ${page},
           'count', ${count},
           'results',
-
             (SELECT json_agg
               (json_build_object
                 (
                   'answer_id', answer_id,
                   'body', body,
-                  'date', TO_CHAR(TO_TIMESTAMP(date_written / 1000), 'DD/MM/YYYY HH24:MI:SS'),
+                  'date', TO_CHAR(TO_TIMESTAMP(date_written / 1000), 'YYYY-MM-DD"T"HH24:MI:SS"Z"'),
                   'answerer_name', answerer_name,
                   'helpfulness', helpful,
                   'photos',
-
-                  (select json_agg
+                  (select coalesce(json_agg
                     (json_build_object
                       ('id', id,
                       'url', url
                       )
-                    ) from photos where answer_id = question_id_questions
+                    ), '[]'::json) from photos where answer_id = question_id_questions
                   )
                 )
-              ) from Answers where question_id_questions = ${question_id} limit ${count} offset(${(page - 1) * count})
+              ) from Answers where question_id_questions = ${question_id} limit ${count} offset(${(page * count) - count})
             )
     )`
   }
