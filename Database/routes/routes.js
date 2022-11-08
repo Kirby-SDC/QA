@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs')
 const router = express.Router()
 const getQuestions = require('../models/getQuestions')
 const postQuestion = require('../models/postQuestion')
@@ -8,7 +9,7 @@ const putQhelpfuls = require('../models/putQhelpful')
 const putAhelpfuls = require('../models/putAhelpful')
 const reportAnswers = require('../models/reportAnswer')
 const reportQuestions = require('../models/reportQuestion')
-const loaderKey = require('../utils/loaderio-22fd77ff2528d28c4d69b227d695ba6f.txt')
+const loaderKey = fs.readFileSync('../utils/loaderio-22fd77ff2528d28c4d69b227d695ba6f.txt').toString();
 
 //get all questions at a product id
 router.get('/qa/questions', getQuestions.getQuestions)
