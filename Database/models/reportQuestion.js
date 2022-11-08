@@ -1,15 +1,12 @@
 const connectionClient = require('../utils/connect.js')
+const {putQreportText} = require('./statements')
 
 const reportQuestion = (req, res, next) => {
 
   let questionId = req.params.question_id;
 
   const statement = {
-    text:
-    `UPDATE Question
-    SET reported = true
-    WHERE
-    id = $1::integer`,
+    text: putQreportText,
     values: [questionId]
   }
 

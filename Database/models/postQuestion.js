@@ -1,4 +1,5 @@
 const connectionClient = require('../utils/connect.js')
+const {postQuestionText} = require('./statements')
 
 const postQuestion = (req, res, next) => {
 
@@ -11,19 +12,8 @@ const postQuestion = (req, res, next) => {
   let helpfulness = 0;
 
   const statement = {
-    text:
-    `INSERT INTO Question
-     VALUES (
-      DEFAULT,
-      $1::integer,
-      $2::varchar,
-      $3::bigint,
-      $4::varchar,
-      $5::varchar,
-      $6::bool,
-      $7::integer) RETURNING id`,
-
-      values: [product_id, body, date, name, email, reported, helpfulness]
+    text: postQuestionText,
+    values: [product_id, body, date, name, email, reported, helpfulness]
   }
 
   connectionClient

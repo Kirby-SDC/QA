@@ -1,15 +1,12 @@
 const connectionClient = require('../utils/connect.js')
+const {putQhelpfulText} = require('./statements')
 
 const putQhelpful = (req, res, next) => {
 
   let questionId = req.params.question_id;
 
   const statement = {
-    text:
-    `UPDATE Question
-    SET question_helpfulness = question_helpfulness + 1
-    WHERE
-    id = $1::integer`,
+    text: putQhelpfulText,
     values: [questionId]
   }
 

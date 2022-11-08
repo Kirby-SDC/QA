@@ -1,4 +1,6 @@
 const connectionClient = require('../utils/connect.js')
+const {postAnswersText} = require('./statements')
+const {postAnswerSubText} = require('./statements')
 
 const postAnswer = (req, res, next) => {
 
@@ -11,19 +13,8 @@ const postAnswer = (req, res, next) => {
   let helpfulness = 0;
 
   const statement = {
-    text:
-    `INSERT INTO Answers
-     VALUES (
-      DEFAULT,
-      $1::integer,
-      $2::varchar,
-      $3::bigint,
-      $4::varchar,
-      $5::varchar,
-      $6::boolean,
-      $7::integer) RETURNING answer_id`,
-
-      values: [question_id_Questions, body, date, name, email, reported, helpfulness]
+    text: postAnswersText,
+    values: [question_id_Questions, body, date, name, email, reported, helpfulness]
   }
 
   connectionClient
@@ -33,12 +24,14 @@ const postAnswer = (req, res, next) => {
     let answerId = data.rows[0].answer_id
 
     req.body.photos.forEach((url) => {
+
+      const subStatement = {
+        text: postAnswerSubText,
+        values: [answerId, url]
+      }
+
       connectionClient
-      .query(`INSERT INTO Photos
-           VALUES (
-           DEFAULT,
-           ${answerId},
-           '${url}')`)
+      .query(subStatement)
     })
     res.status(201).end()
   })
