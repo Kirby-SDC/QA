@@ -9,7 +9,8 @@ const reportAnswer = (req, res, next) => {
     `UPDATE Answers
     SET reported = true
     WHERE
-    answer_id = ${answerId}`
+    answer_id = $1::integer`,
+    values: [answerId]
   }
 
   connectionClient

@@ -5,7 +5,7 @@ const getAnswers = (req, res, next) => {
   let question_id = req.params.question_id || req.body.question_id
   let count = req.query.count || 5
   let page = req.query.page || 1
-
+  let offSet = ((page * count) - count)
   const statement =
 
   {
@@ -13,9 +13,9 @@ const getAnswers = (req, res, next) => {
     text:
 
     `SELECT json_build_object
-      (   'question', ${question_id},
-          'page',  ${page},
-          'count', ${count},
+      (   'question', $1::integer,
+          'page',  $3::integer,
+          'count', $2::integer,
           'results',
             (SELECT json_agg
               (json_build_object
@@ -34,9 +34,10 @@ const getAnswers = (req, res, next) => {
                     ), '[]'::json) from photos where answer_id = question_id_questions
                   )
                 )
-              ) from Answers where question_id_questions = ${question_id} limit ${count} offset(${(page * count) - count})
+              ) from Answers where question_id_questions = $1::integer limit $2::integer offset($4::integer)
             )
-    )`
+    )`,
+    values: [question_id, count, page, offSet]
   }
 
   connectionClient

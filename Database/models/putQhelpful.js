@@ -9,7 +9,8 @@ const putQhelpful = (req, res, next) => {
     `UPDATE Question
     SET question_helpfulness = question_helpfulness + 1
     WHERE
-    id = ${questionId}`
+    id = $1::integer`,
+    values: [questionId]
   }
 
   connectionClient

@@ -15,13 +15,15 @@ const postQuestion = (req, res, next) => {
     `INSERT INTO Question
      VALUES (
       DEFAULT,
-      ${product_id},
-      '${body}',
-      ${date},
-      '${name}',
-      '${email}',
-      ${reported},
-      ${helpfulness}) RETURNING id`
+      $1::integer,
+      $2::varchar,
+      $3::bigint,
+      $4::varchar,
+      $5::varchar,
+      $6::bool,
+      $7::integer) RETURNING id`,
+
+      values: [product_id, body, date, name, email, reported, helpfulness]
   }
 
   connectionClient
