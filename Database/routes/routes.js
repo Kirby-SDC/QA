@@ -8,6 +8,7 @@ const putQhelpfuls = require('../models/putQhelpful')
 const putAhelpfuls = require('../models/putAhelpful')
 const reportAnswers = require('../models/reportAnswer')
 const reportQuestions = require('../models/reportQuestion')
+const loaderKey = require('../utils/loaderio-22fd77ff2528d28c4d69b227d695ba6f.txt')
 
 //get all questions at a product id
 router.get('/qa/questions', getQuestions.getQuestions)
@@ -29,4 +30,6 @@ router.put('/qa/questions/:question_id/report', reportQuestions.reportQuestion);
 //report an answer
 router.put('/qa/answers/:answer_id/report', reportAnswers.reportAnswer);
 
+//loadtesting
+router.get('/loaderio-22fd77ff2528d28c4d69b227d695ba6f.txt',(err, res) => res.end(loaderKey))
 module.exports = router;
