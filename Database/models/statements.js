@@ -116,7 +116,8 @@ module.exports.getAnswersText = getAnswersText =
       FROM
         answers
       WHERE
-        question_id_questions = $1::integer
+        question_id_questions = $1::integer AND
+        answers.reported = false
       LIMIT $2::integer OFFSET $4::integer
     )
   )`;
