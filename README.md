@@ -1,9 +1,9 @@
 # Express/postGres RESTful API
 ## Overview - No ORM, No pgAdmin just keys.
 
-This is my repo for booting a server that can accept requests from a client. It also allows you to create your tables and import the tables with data from a csv file/s using .sql file to query your database. The intent here is to make it easier, hopefully, to deploy to AWS, with or without Docker.
+This is a RESTful API server architecture implemented to satisfy the requirements of Atelier's retail web application . It offers development features that automate seeding and importing. Create tables and import data from existing csv file/s while simulatenously implementing a new schema all from a single .sql file.
 
-Out of the box it is setup to directly import my personal .csv files from a directory into my database defined by the .sql file.  If you want to change this you need to add your own .sql file with import statements pointing to where your .csv files are.
+Out of the box it is setup to directly import .csv files from a directory into a database as defined by the .sql file.  If you want to change this you need to add your own .sql file with an appropriate schema and import statements pointing to where your local .csv files are stored.
 
 If you simply want to test this you can just change the path the import statement is pointing to, below is an example.
 
